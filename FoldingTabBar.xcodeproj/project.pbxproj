@@ -24,7 +24,6 @@
 		C59E279D1C04719600E3BFBF /* YALTabBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E27871C04719600E3BFBF /* YALTabBarItem.h */; };
 		C59E279E1C04719600E3BFBF /* YALTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E27881C04719600E3BFBF /* YALTabBarItem.m */; };
 		C59E27A01C04719600E3BFBF /* FoldingTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E278D1C04719600E3BFBF /* FoldingTabBar.h */; };
-		C59E27A11C04719600E3BFBF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C59E278E1C04719600E3BFBF /* Info.plist */; };
 		C59E27A21C04719600E3BFBF /* YALFoldingTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = C59E27911C04719600E3BFBF /* YALFoldingTabBar.h */; };
 		C59E27A31C04719600E3BFBF /* YALFoldingTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E27921C04719600E3BFBF /* YALFoldingTabBar.m */; };
 /* End PBXBuildFile section */
@@ -48,7 +47,6 @@
 		C59E27871C04719600E3BFBF /* YALTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALTabBarItem.h; sourceTree = "<group>"; };
 		C59E27881C04719600E3BFBF /* YALTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALTabBarItem.m; sourceTree = "<group>"; };
 		C59E278D1C04719600E3BFBF /* FoldingTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldingTabBar.h; sourceTree = "<group>"; };
-		C59E278E1C04719600E3BFBF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C59E27911C04719600E3BFBF /* YALFoldingTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFoldingTabBar.h; sourceTree = "<group>"; };
 		C59E27921C04719600E3BFBF /* YALFoldingTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFoldingTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				C59E278D1C04719600E3BFBF /* FoldingTabBar.h */,
-				C59E278E1C04719600E3BFBF /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -303,6 +300,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = C59E27421C04708A00E3BFBF;
@@ -320,7 +318,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59E27A11C04719600E3BFBF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

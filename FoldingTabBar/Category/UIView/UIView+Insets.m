@@ -8,33 +8,25 @@
 
 #import "UIView+Insets.h"
 
-#define NATIVE_SIZE [[UIScreen mainScreen] nativeBounds].size
-
-#define IPHONE_X_PORTRAIT_SIZE CGSizeMake(1125, 2436)
-#define IPHONE_X_LANDSCAPE_SIZE CGSizeMake(2436, 1125)
-
-#define IS_IPHONE [[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone
-
-BOOL isIPhoneX() {
-    if (IS_IPHONE) {
-        BOOL isLandscapeIPhoneX = CGSizeEqualToSize(NATIVE_SIZE, IPHONE_X_LANDSCAPE_SIZE);
-        BOOL isPortraitIPhoneX = CGSizeEqualToSize(NATIVE_SIZE, IPHONE_X_PORTRAIT_SIZE);
-        
-        return isLandscapeIPhoneX || isPortraitIPhoneX;
+UIEdgeInsets edgeInsets() {
+    BOOL isPhoneX = NO;
+    if (@available(iOS 11.0, *)) {
+        isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;
     }
-    return false;
+    UIEdgeInsets returnInsets = UIEdgeInsetsMake(20, 0, 0, 0);
+    UIWindow * keyWindow = [UIApplication sharedApplication].keyWindow;
+    if ([keyWindow respondsToSelector:NSSelectorFromString(@"safeAreaInsets")] && isPhoneX) {
+        UIEdgeInsets inset = [[keyWindow valueForKeyPath:@"safeAreaInsets"] UIEdgeInsetsValue];
+        returnInsets = inset;
+    }
+    return returnInsets;
 }
 
 @implementation UIView (Insets)
 
 -(CGFloat)bottomInset {
-    if (@available(iOS 11, *)) {
-        if (isIPhoneX()) {
-            //Default bottom inset for iPhone X at portrait orientation
-            return 34.f;
-        }
-    }
-    return 0.f;
+    UIEdgeInsets returnInsets = edgeInsets();
+    return returnInsets.bottom;
 }
 
 @end
